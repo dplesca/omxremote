@@ -1,0 +1,10 @@
+{ 
+	"name" : "my-project",
+	"version" : "1.0.0",
+	"private": true,
+	"dependencies" : { 
+		"omxcontrol" : "0.0.1",
+		"grasshopper": "0.5.0",
+		"request": "2.9.x"
+	} 
+}

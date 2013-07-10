@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Control TV</title>
+</head>
+<body>
+	<h1>try to control</h1>
+	<ul>
+	<% for(i=0;i<files.length;i++){ %>
+		<% if (files[i].match(/(.+).(mkv|mp4|avi)$/)){ %>	
+			<li><%= files[i] %></li>
+		<% } %>
+	<% } %>
+	</ul>
+</body></html>
