@@ -22,7 +22,7 @@ gh.get('/file/{name}', function(args) {
 });
 
 gh.post('/file/{name}/play', function(args) {
-	var filename = args.name.replace(/~/g, ".");
+	var filename = path + args.name.replace(/~/g, ".");
 	omx.start(filename);
 });
 
