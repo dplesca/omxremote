@@ -7,6 +7,10 @@ var path = '/media/768E92E48E929BE5/', files = fs.readdirSync(path);
 console.log('test' + files.length);
 
 gh.get('/', function() {
+	var nr_files = files.length;
+	for( i = 0; i < nr_files; i++ ){
+		this.model['files'].push({"file" : files[i]});
+	}
 	this.model['files'] = files;
 	this.render('index');
 });

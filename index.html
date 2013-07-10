@@ -7,10 +7,10 @@
 <body>
 	<h1>try to control</h1>
 	<ul>
-	<% for(i=0;i<files.length;i++){ %>
-		<% if (files[i].match(/(.+).(mkv|mp4|avi)$/)){ %>	
-			<li><%= files[i] %></li>
+	<% files.forEach(function(item){ %>
+		<% if (item.match(/(.+).(mkv|mp4|avi)$/)){ %>	
+			<li><%= item %></li>
 		<% } %>
-	<% } %>
+	<% }); %>
 	</ul>
 </body></html>
