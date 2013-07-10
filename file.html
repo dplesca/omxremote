@@ -9,17 +9,17 @@
 <body>
 	<h1>try to control</h1>
 	<h2><%= name %></h2>
+	<a href="/file/<%= name %>/start" class="start">Start</a>
 	<a href="/file/<%= name %>/play" class="play">Play</a>
-	<a href="/file/<%= name %>/pause" class="play">Pause</a>
+	<a href="/file/<%= name %>/pause" class="pause">Pause</a>
 <script>
 	$(function(){
-		$('a.play, a.pause').click(function(){
+		$('a.play, a.start, a.pause').click(function(){
 			$.post( $(this).attr('href') ).done(function ( data ) {
 				console.log('done');
 			});
 			return false;
 		});
-
 	});
 </script>
 </body></html>

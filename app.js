@@ -21,14 +21,17 @@ gh.get('/file/{name}', function(args) {
     this.render('file');
 });
 
-gh.post('/file/{name}/play', function(args) {
+gh.post('/file/{name}/start', function(args) {
 	var filename = path + args.name.replace(/~/g, ".");
 	omx.start(filename);
 });
 
 gh.post('/file/{name}/pause', function(args) {
-	var filename = path + args.name.replace(/~/g, ".");
 	omx.pause();
+});
+
+gh.post('/file/{name}/play', function(args) {
+	omx.play();
 });
 
 gh.serve(8080);
