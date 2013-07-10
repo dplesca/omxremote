@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Control TV</title>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+</head>
+<body>
+	<h1>try to control</h1>
+	<h2><%= name %></h2>
+	<a href="/file/<%= name %>/play" class="play">Play</a>
+
+<script>
+	$(function(){
+		$('a.play').click(function(){
+			$.post( $(this).attr('href') ).done(function ( data ) {
+				console.log('done');
+			});
+			return false;
+		});
+	});
+</script>
+</body></html>

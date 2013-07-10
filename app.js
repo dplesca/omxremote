@@ -15,6 +15,16 @@ gh.get('/', function() {
 	this.model['files'] = files;
 	this.render('index');
 });
+
+gh.get('/file/{name}', function(args) {
+    this.model['name'] = args.name;
+    this.render('file');
+});
+
+gh.get('/file/{name}/play', function(args) {
+	omx.start(args.name);
+});
+
 gh.serve(8080);
 
 /*omx.start(filename);
