@@ -31,7 +31,7 @@ gh.post('/file/{name}/pause', function(args) {
 });
 
 gh.post('/file/{name}/play', function(args) {
-	omx.play();
+	omx.pause();
 });
 
 gh.serve(8080);
