@@ -14,11 +14,12 @@
 	<a href="/file/<%= name %>/pause" class="pause">Pause</a>
 <script>
 	$(function(){
-		$('a.play, a.start, a.pause').click(function(){
+		$("body").on("click", "a.play, a.start, a.pause", function(event){
+		//$('').click(function(){
 			$.post( $(this).attr('href') ).done(function ( data ) {
 				console.log('done');
 			});
-			return false;
+			event.preventDefault();
 		});
 	});
 </script>
