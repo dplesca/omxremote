@@ -26,6 +26,11 @@ gh.post('/file/{name}/play', function(args) {
 	omx.start(filename);
 });
 
+gh.post('/file/{name}/pause', function(args) {
+	var filename = path + args.name.replace(/~/g, ".");
+	omx.pause();
+});
+
 gh.serve(8080);
 
 /*omx.start(filename);

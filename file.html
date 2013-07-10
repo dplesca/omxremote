@@ -10,15 +10,16 @@
 	<h1>try to control</h1>
 	<h2><%= name %></h2>
 	<a href="/file/<%= name %>/play" class="play">Play</a>
-
+	<a href="/file/<%= name %>/pause" class="play">Pause</a>
 <script>
 	$(function(){
-		$('a.play').click(function(){
+		$('a.play, a.pause').click(function(){
 			$.post( $(this).attr('href') ).done(function ( data ) {
 				console.log('done');
 			});
 			return false;
 		});
+
 	});
 </script>
 </body></html>
