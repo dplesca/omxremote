@@ -21,7 +21,7 @@ gh.get('/file/{name}', function(args) {
     this.render('file');
 });
 
-gh.get('/file/{name}/play', function(args) {
+gh.post('/file/{name}/play', function(args) {
 	omx.start(args.name);
 });
 
