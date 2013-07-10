@@ -19,11 +19,13 @@ gh.get('/', function() {
 gh.get('/file/{name}', function(args) {
     this.model['name'] = args.name;
     this.render('file');
+    this.renderText('1');
 });
 
 gh.post('/file/{name}/start', function(args) {
 	var filename = path + args.name.replace(/~/g, ".");
 	omx.start(filename);
+	this.renderText('1');
 });
 
 gh.post('/file/{name}/pause', function(args) {
@@ -36,6 +38,10 @@ gh.post('/file/{name}/play', function(args) {
 	this.renderText('1');
 });
 
+gh.post('/file/{name}/stop', function(args) {
+	omx.quit();
+	this.renderText('1');
+});
 gh.serve(8080);
 
 /*omx.start(filename);
