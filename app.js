@@ -22,7 +22,8 @@ gh.get('/file/{name}', function(args) {
 });
 
 gh.post('/file/{name}/play', function(args) {
-	omx.start(args.name);
+	var filename = args.name.replace(/~/g, ".");
+	omx.start(filename);
 });
 
 gh.serve(8080);
