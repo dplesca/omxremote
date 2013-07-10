@@ -28,10 +28,12 @@ gh.post('/file/{name}/start', function(args) {
 
 gh.post('/file/{name}/pause', function(args) {
 	omx.pause();
+	this.renderText('1');
 });
 
 gh.post('/file/{name}/play', function(args) {
 	omx.pause();
+	this.renderText('1');
 });
 
 gh.serve(8080);
