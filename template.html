@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>OmxRemote</title>
+    <title>Ratchet template page</title>
 
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -20,20 +20,16 @@
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="touch-icons/apple-touch-icon-57x57.png">
 
     <!-- Include the compiled Ratchet CSS -->
-    <link rel="stylesheet" href="/assets/ratchet.css">
+    <link rel="stylesheet" href="ratchet.css">
 
     <!-- Include the compiled Ratchet JS -->
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+    <script src="ratchet.js"></script>
 
     <!-- Intro paragraph styles. Delete once you start using this page -->
     <style type="text/css">
         .welcome {
           line-height: 1.5;
           color: #555;
-        }
-        h4{
-        	word-wrap: break-word;
         }
     </style>
 
@@ -42,41 +38,43 @@
 
   <!-- Make sure all your bars are the first things in your <body> -->
   <header class="bar-title">
-  	<a class="button-prev" href="/">Back</a>
-    <h1 class="title">omxplayer remote control</h1>
+    <h1 class="title">Ratchet</h1>
   </header>
 
   <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
   <div class="content">
     <div class="content-padded">
-      <h4>File: <%= name %></h4>
+      <p class="welcome">Thanks for downloading Ratchet. This is an example HTML page that's linked up to compiled Ratchet CSS and JS, has the proper meta tags and the HTML structure. Need some more help before you start filling this with your own content? Check out some Ratchet resources:</p>
     </div>
 
-    
-	<div>
-		<a href="/file/<%= hash %>/start"  data-ignore="push" class="start button-positive button-block">Start</a>
-	</div>
-	<div>
-		<a href="/file/<%= hash %>/play" class="play button-block" data-ignore="push">Play</a>
-	</div>
-	<div>
-		<a href="/file/<%= hash %>/pause" class="pause button-block" data-ignore="push">Pause</a>
-	</div>
-	<div>
-		<a href="/file/<%= hash %>/stop" class="stop button-negative button-block" data-ignore="push">Stop</a>
-	</div>
+    <ul class="list inset">
+      <li>
+        <a href="http://maker.github.com/ratchet/">
+          <strong>Ratchet documentation</strong>
+          <span class="chevron"></span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.github.com/maker/ratchet/">
+          <strong>Ratchet on Github</strong>
+          <span class="chevron"></span>
+        </a>
+      </li>
+      <li>
+        <a href="https://groups.google.com/forum/#!forum/goratchet">
+          <strong>Ratchet Google group</strong>
+          <span class="chevron"></span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.twitter.com/GoRatchet">
+          <strong>Ratchet on Twitter</strong>
+          <span class="chevron"></span>
+        </a>
+      </li>
+    </ul>
 
   </div>
-	<script>
-	$(function(){
-		$("body").on("click", "a.play, a.start, a.pause, a.stop", function(event){
-		//$('').click(function(){
-			$.post( $(this).attr('href') ).done(function ( data ) {
-				console.log('done');
-			});
-			event.preventDefault();
-		});
-	});
-</script>
+
   </body>
 </html>
