@@ -46,27 +46,21 @@
   <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
   <div class="content">
     <div class="content-padded">
-      <p class="welcome">Thanks for downloading Ratchet. This is an example HTML page that's linked up to compiled Ratchet CSS and JS, has the proper meta tags and the HTML structure. Need some more help before you start filling this with your own content? Check out some Ratchet resources:</p>
+      <h2><%= name %></h2>
     </div>
 
-    <h2><%= name %></h2>
+    
 	<div>
-		<h3><a href="/file/<%= hash %>/start" class="start button-positive button-block">Start</a></h3>
+		<a href="/file/<%= hash %>/start" class="start button-positive button-block">Start</a>
 	</div>
 	<div>
-		<h3>
-			<a href="/file/<%= hash %>/play" class="play button-block">Play</a>
-		</h3>
+		<a href="/file/<%= hash %>/play" class="play button-block">Play</a>
 	</div>
 	<div>
-		<h3>
-			<a href="/file/<%= hash %>/pause" class="pause button-block">Pause</a>
-		</h3>
+		<a href="/file/<%= hash %>/pause" class="pause button-block">Pause</a>
 	</div>
 	<div>
-		<h3>
-			<a href="/file/<%= hash %>/stop" class="stop button-negative button-block">Stop</a>
-		</h3>
+		<a href="/file/<%= hash %>/stop" class="stop button-negative button-block">Stop</a>
 	</div>
 
   </div>
