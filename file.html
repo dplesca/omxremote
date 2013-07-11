@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/assets/ratchet.css">
 
     <!-- Include the compiled Ratchet JS -->
+    <script src="/assets/ratchet.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
 
@@ -54,29 +55,17 @@
 
     
 	<div>
-		<a href="/file/<%= hash %>/start"  data-ignore="push" class="start button-positive button-block">Start</a>
+		<button data-href="/file/<%= hash %>/start"  data-ignore="push" class="start button-positive button-block">Start</button>
 	</div>
 	<div>
-		<a href="/file/<%= hash %>/play" class="play button-block" data-ignore="push">Play</a>
+		<button data-href="/file/<%= hash %>/play" class="play button-block" data-ignore="push">Play</button>
 	</div>
 	<div>
-		<a href="/file/<%= hash %>/pause" class="pause button-block" data-ignore="push">Pause</a>
+		<button data-href="/file/<%= hash %>/pause" class="pause button-block" data-ignore="push">Pause</button>
 	</div>
 	<div>
-		<a href="/file/<%= hash %>/stop" class="stop button-negative button-block" data-ignore="push">Stop</a>
+		<button data-href="/file/<%= hash %>/stop" class="stop button-negative button-block" data-ignore="push">Stop</button>
 	</div>
-
   </div>
-	<script>
-	$(function(){
-		$("body").on("click", "a.play, a.start, a.pause, a.stop", function(event){
-		//$('').click(function(){
-			$.post( $(this).attr('href') ).done(function ( data ) {
-				console.log('done');
-			});
-			event.preventDefault();
-		});
-	});
-</script>
   </body>
 </html>
