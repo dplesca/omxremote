@@ -1,16 +1,66 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Control TV</title>
-</head>
-<body>
-	<h1>try to control</h1>
-	<ul>
-	<% files.forEach(function(item){ %>
-		<% if (item.file.match(/(.+).(mkv|mp4|avi)$/)){ %>	
-			<li><a href="/file/<%= item.hash %>"><%= item.file %></a></li>
-		<% } %>
-	<% }); %>
-	</ul>
-</body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>OmxRemote</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- Set a shorter title for iOS6 devices when saved to home screen -->
+    <meta name="apple-mobile-web-app-title" content="Ratchet">
+
+    <!-- Set Apple icons for when prototype is saved to home screen -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="touch-icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="touch-icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="touch-icons/apple-touch-icon-57x57.png">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link rel="stylesheet" href="/assets/ratchet.css">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="/assets/ratchet.js"></script>
+
+    <!-- Intro paragraph styles. Delete once you start using this page -->
+    <style type="text/css">
+        .welcome {
+          line-height: 1.5;
+          color: #555;
+        }
+    </style>
+
+  </head>
+  <body>
+
+  <!-- Make sure all your bars are the first things in your <body> -->
+  <header class="bar-title">
+    <h1 class="title">omxplayer remote control</h1>
+  </header>
+
+  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+  <div class="content">
+    <div class="content-padded">
+      <p class="welcome">Thanks for downloading Ratchet. This is an example HTML page that's linked up to compiled Ratchet CSS and JS, has the proper meta tags and the HTML structure. Need some more help before you start filling this with your own content? Check out some Ratchet resources:</p>
+    </div>
+
+    <ul class="list inset">
+    	<% files.forEach(function(item){ %>
+			<% if (item.file.match(/(.+).(mkv|mp4|avi)$/)){ %>
+				<li>
+					<a href="/file/<%= item.hash %>">
+						<strong><%= item.file %></strong>
+						<span class="chevron"></span>
+					</a>
+				</li>
+			<% } %>
+		<% }); %>
+    </ul>
+
+  </div>
+
+  </body>
+</html>
