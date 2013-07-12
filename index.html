@@ -68,7 +68,7 @@
   </div>
 <script>
 $(function(){
-	$("body").on("click", "button.play, button.start, button.pause, button.stop", function(event){
+	$("body").on("click", "a.play, a.start, a.pause, a.stop", function(event){
 	//$('').click(function(){
 		$.post( $(this).attr('data-href') ).done(function ( data ) {
 			console.log('done');
