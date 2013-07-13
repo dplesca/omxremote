@@ -5,7 +5,7 @@ var gh = require('grasshopper'),
 
 
 //configuration
-var path = '/home/pi/finished/';
+var path = '/media/9012BE0412BDEEFA';
 gh.configure({
     viewsDir: 'views',
     layout: 'template'
@@ -31,7 +31,7 @@ gh.get('/', function() {
 		return all_files;
 	};
 	this.model['files'] = traverseFileSystem(path, all_files);
-	//console.log(this.model['files']);
+	
 	this.render('index');
 });
 
@@ -63,10 +63,4 @@ gh.post('/file/{name}/stop', function(args) {
 	omx.quit();
 	this.renderText('1');
 });
-gh.serve(8080);
-
-/*omx.start(filename);
-
-omx.pause();
-
-omx.quit();*/
+gh.serve(31415);
