@@ -48,12 +48,20 @@
 
   <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
   <div class="content">
-  	
+
   </div>
 <script>
 $(function(){
   $("body").on("click", "a.play, a.start, a.pause, a.stop", function(event){
-  //$('').click(function(){
+  	if ($(this).hasClass('pause')){
+  		if ($(this).attr('data-status') == 'pause'){
+  			$(this).text('Play');
+  			$(this).attr('data-status', 'play');
+  		} else if($(this).attr('data-status') == 'play'){
+  			$(this).text('Pause');
+  			$(this).attr('data-status', 'pause');
+  		}
+  	}
 	$.post( $(this).attr('data-href') ).done(function ( data ) {
 	  console.log('done');
 	});
