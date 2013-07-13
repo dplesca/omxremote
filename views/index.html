@@ -1,0 +1,15 @@
+<div class="content-padded">    
+</div>
+
+<ul class="list inset">
+	<% files.forEach(function(item){ %>
+		<% if (item.file.match(/(.+).(mkv|mp4|avi)$/)){ %>
+			<li>
+				<a href="/file/<%= item.hash %>">
+					<strong><%= item.file %></strong>
+					<span class="chevron"></span>
+				</a>
+			</li>
+		<% } %>
+	<% }); %>
+</ul>
