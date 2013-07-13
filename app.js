@@ -3,8 +3,13 @@ var gh = require('grasshopper'),
 	omx = require('omxcontrol'),
 	fs = require('fs');
 
-//var path = '/media/768E92E48E929BE5/';
+
+//configuration
 var path = '/home/pi/finished/';
+gh.configure({
+    viewsDir: 'views',
+    layout: 'template'
+});
 
 gh.get('/', function() {
 	var all_files = [];
