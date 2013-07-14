@@ -12,5 +12,6 @@ Clone the repo, cd in it, run npm install. Afterwards, edit the app.js file with
 
 ##Screenshots
 
-![home page](http://farm3.staticflickr.com/2840/9282539121_13da5d3980_z.jpg)
+![home page](http://farm3.staticflickr.com/2840/9282539121_13da5d3980_z.jpg)  
+
 ![video page](http://farm4.staticflickr.com/3792/9282538835_c315de781d_z.jpg)
