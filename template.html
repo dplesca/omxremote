@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 	<meta charset="utf-8">
 	<title>omxRemote</title>
 
@@ -38,39 +38,39 @@
 		}
 	</style>
 
-  </head>
-  <body>
+</head>
+<body>
 
-  <!-- Make sure all your bars are the first things in your <body> -->
-  <header class="bar-title">
-  	<a class="button" href="/">
-		home
-	</a>
-	<h1 class="title">omxRemote</h1>
-  </header>
+	<!-- Make sure all your bars are the first things in your <body> -->
+	<header class="bar-title">
+	  	<a class="button" href="/">
+			home
+		</a>
+		<h1 class="title">omxRemote</h1>
+	</header>
 
-  <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-  <div class="content">
-	<% include(view); %>
-  </div>
-<script>
-$(function(){
-  $("body").on("click", "a.play, a.start, a.pause, a.stop", function(event){
-  	if ($(this).hasClass('pause')){
-  		if ($(this).attr('data-status') == 'pause'){
-  			$(this).text('Play');
-  			$(this).attr('data-status', 'play');
-  		} else if($(this).attr('data-status') == 'play'){
-  			$(this).text('Pause');
-  			$(this).attr('data-status', 'pause');
-  		}
-  	}
-	$.post( $(this).attr('data-href') ).done(function ( data ) {
-	  console.log('done');
+	<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+	<div class="content">
+		<% include(view); %>
+	</div>
+	<script>
+	$(function(){
+		$("body").on("click", "a.play, a.start, a.pause, a.stop", function(event){
+			if ($(this).hasClass('pause')){
+				if ($(this).attr('data-status') == 'pause'){
+					$(this).text('Play');
+					$(this).attr('data-status', 'play');
+				} else if($(this).attr('data-status') == 'play'){
+					$(this).text('Pause');
+					$(this).attr('data-status', 'pause');
+				}
+			}
+			$.post( $(this).attr('data-href') ).done(function ( data ) {
+				console.log('done');
+			});
+			event.preventDefault();
+		});
 	});
-	event.preventDefault();
-  });
-});
-</script>
+	</script>
   </body>
 </html>

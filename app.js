@@ -22,7 +22,6 @@ gh.get('/', function() {
 			var stats = fs.statSync(currentFile);
 			if (stats.isFile() &&  files[i].match(/(.+).(mkv|mp4|avi)$/)) {
 				all_files.push({"file" : files[i], "hash": new Buffer(currentFile).toString('base64')});
-				//console.log(currentFile);
 			}
 			else if (stats.isDirectory()) {
 	 			traverseFileSystem(currentFile, all_files);
@@ -38,7 +37,6 @@ gh.get('/', function() {
 gh.get('/file/{name}', function(args) {
     this.model['name'] = new Buffer(args.name, 'base64').toString('ascii');
     this.model['hash'] = args.name;
-    console.log(this.model['name']);
     this.render('file');
     this.renderText('1');
 });
