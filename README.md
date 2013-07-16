@@ -12,6 +12,7 @@ omxremote is a little node.js and [ratchet](http://maker.github.io/ratchet/) pow
 
 - clone the repo: `git clone https://github.com/dplesca/omxremote`
 - cd in it: `cd omxremote`
+- install npm modules: `npm install`
 - edit app js with a path of your choosing: `var path = '/home/pi/media_files';`
 - run it: `nodejs app.js`
 - point your iPhone's browser to: `http://pi's ip:31415/` and choose the file you want to play
