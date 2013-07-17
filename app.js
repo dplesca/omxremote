@@ -30,7 +30,9 @@ gh.get('/', function() {
 		return all_files;
 	};
 	this.model['files'] = traverseFileSystem(path, all_files);
-	
+	this.model['files'].sort(function (a, b) {
+		return a.file.localeCompare(b.file);
+	});
 	this.render('index');
 });
 
