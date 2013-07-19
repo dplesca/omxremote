@@ -6,10 +6,16 @@
 <div>
 	<a data-href="/file/<%= hash %>/start"  data-ignore="push" class="start button-positive button-block">Start</a>
 </div>
-<div>
-	<a data-href="/file/<%= hash %>/backward" class="move button" data-ignore="push" data-status="pause">&laquo;</a>
-	<a data-href="/file/<%= hash %>/pause" class="pause button" data-ignore="push" data-status="pause">Pause</a>
-	<a data-href="/file/<%= hash %>/forward" class="move button" data-ignore="push" data-status="pause">&raquo;</a>
+<div style="height:44px;margin-bottom:10px;">
+	<div style="width:32%;float:left;margin-right:1.5%;">
+		<a data-href="/file/<%= hash %>/backward" class="move button-block" data-ignore="push" data-status="pause">&laquo; Back</a>	
+	</div>
+	<div style="width:33%;float:left;margin-right:1.5%;">
+		<a data-href="/file/<%= hash %>/pause" class="pause button-block button-main" data-ignore="push" data-status="pause">Pause</a>
+	</div>
+	<div style="width:32%;float:left;">
+		<a data-href="/file/<%= hash %>/forward" class="move button-block" data-ignore="push" data-status="pause">Forward &raquo;</a>
+	</div>
 </div>
 <div>
 	<a data-href="/file/<%= hash %>/stop" class="stop button-negative button-block" data-ignore="push">Stop</a>

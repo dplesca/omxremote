@@ -5,7 +5,7 @@ var gh = require('grasshopper'),
 
 
 //configuration
-var path = '/media/9012BE0412BDEEFA';
+var path = '/home/pi/finished';
 gh.configure({
     viewsDir: 'views',
     layout: 'template'
