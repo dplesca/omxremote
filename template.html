@@ -55,7 +55,7 @@
 	</div>
 	<script>
 	$(function(){
-		$("body").on("click", "a.play, a.start, a.pause, a.stop", function(event){
+		$("body").on("click", "a.play, a.start, a.pause, a.stop, a.move", function(event){
 			if ($(this).hasClass('pause')){
 				if ($(this).attr('data-status') == 'pause'){
 					$(this).text('Play');
