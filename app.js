@@ -63,4 +63,12 @@ gh.post('/file/{name}/stop', function(args) {
 	omx.quit();
 	this.renderText('1');
 });
+gh.post('/file/{name}/forward', function(args) {
+	omx.forward();
+	this.renderText('1');
+});
+gh.post('/file/{name}/backward', function(args) {
+	omx.backward();
+	this.renderText('1');
+});
 gh.serve(31415);

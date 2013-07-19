@@ -7,7 +7,9 @@
 	<a data-href="/file/<%= hash %>/start"  data-ignore="push" class="start button-positive button-block">Start</a>
 </div>
 <div>
-	<a data-href="/file/<%= hash %>/pause" class="pause button-block" data-ignore="push" data-status="pause">Pause</a>
+	<a data-href="/file/<%= hash %>/backward" class="move button" data-ignore="push" data-status="pause">&laquo;</a>
+	<a data-href="/file/<%= hash %>/pause" class="pause button" data-ignore="push" data-status="pause">Pause</a>
+	<a data-href="/file/<%= hash %>/forward" class="move button" data-ignore="push" data-status="pause">&raquo;</a>
 </div>
 <div>
 	<a data-href="/file/<%= hash %>/stop" class="stop button-negative button-block" data-ignore="push">Stop</a>
