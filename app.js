@@ -72,7 +72,7 @@ gh.post('/file/{name}/backward', function(args) {
 	this.renderText('1');
 });
 gh.post('/file/{name}/subs', function(args) {
-	omx.backward();
+	omx.subs();
 	this.renderText('1');
 });
 gh.serve(31415);
