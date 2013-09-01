@@ -70,7 +70,7 @@
 	</div>
 	<script>
 	$(function(){
-		$("body").on("click", "a.play, a.start, a.pause, a.stop, a.move", function(event){
+		$("body").on("click", "a.play, a.start, a.pause, a.stop, a.move, a.subs", function(event){
 			if ($(this).hasClass('pause')){
 				if ($(this).attr('data-status') == 'pause'){
 					$(this).text('Play');
