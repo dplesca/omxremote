@@ -1,20 +1,17 @@
-var gh = require('grasshopper'),
-	request = require('request'),
-	omx = require('omxcontrol'),
-	fs = require('fs');
+var express = require('express'),
+    exphbs  = require('express3-handlebars'),
+    omx = require('omxcontrol'),
+    path = '/media/Seagate',
+    app = express();
 
+app.use(express.static('assets'));
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
-//configuration
-var path = '/media/win';
-gh.configure({
-    viewsDir: 'views',
-    layout: 'template'
-});
-
-gh.get('/', function() {
-	var all_files = [];
-	var fs = require('fs');
-	var traverseFileSystem = function (currentPath, all_files) {
+app.get('/', function (req, res) {
+	var all_files = [],
+		fs = require('fs');
+		traverseFileSystem = function (currentPath, all_files) {
 	
 		var files = fs.readdirSync(currentPath);
 		for (var i in files) {
@@ -29,50 +26,56 @@ gh.get('/', function() {
 		}
 		return all_files;
 	};
-	this.model['files'] = traverseFileSystem(path, all_files);
-	this.model['files'].sort(function (a, b) {
+	var files = traverseFileSystem(path, all_files);
+	files.sort(function (a, b) {
 		return a.file.localeCompare(b.file);
 	});
-	this.render('index');
+    res.render('home', {"files" : files});
 });
 
-gh.get('/file/{name}', function(args) {
-    this.model['name'] = new Buffer(args.name, 'base64').toString('ascii');
-    this.model['hash'] = args.name;
-    this.render('file');
-    this.renderText('1');
+app.get('/file/:name', function(req, res){
+	var params = {};
+	params.name = new Buffer(req.params.name, 'base64').toString('ascii');
+    params.hash = req.params.name;
+    res.render('file', params);
 });
 
-gh.post('/file/{name}/start', function(args) {
-	var filename = new Buffer(args.name, 'base64').toString('ascii');
+app.post('/file/:name/start', function(req, res) {
+	var filename = new Buffer(req.params.name, 'base64').toString('ascii');
 	omx.start(filename);
-	this.renderText('1');
+	res.send(200);
 });
 
-gh.post('/file/{name}/pause', function(args) {
+app.post('/file/:name/pause', function(req, res) {
 	omx.pause();
-	this.renderText('1');
+	res.send(200);
 });
 
-gh.post('/file/{name}/play', function(args) {
+app.post('/file/:name/play', function(req, res) {
 	omx.pause();
-	this.renderText('1');
+	res.send(200);
 });
 
-gh.post('/file/{name}/stop', function(args) {
+app.post('/file/:name/stop', function(req, res) {
 	omx.quit();
-	this.renderText('1');
+	res.send(200);
 });
-gh.post('/file/{name}/forward', function(args) {
+
+/*
+app.post('/file/:name/forward', function(args) {
 	omx.forward();
-	this.renderText('1');
+	res.send(200);
 });
-gh.post('/file/{name}/backward', function(args) {
+app.post('/file/:name/backward', function(args) {
 	omx.backward();
-	this.renderText('1');
+	res.send(200);
 });
-gh.post('/file/{name}/subs', function(args) {
+app.post('/file/:name/subs', function(args) {
 	omx.subs();
-	this.renderText('1');
+	res.send(200);
 });
-gh.serve(31415);
+*/
+
+app.listen(31415);
+
+console.log('omxremote launched on port 31415');

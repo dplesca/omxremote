@@ -20,12 +20,12 @@
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/touch-icons/apple-touch-icon-57x57.png">
 
 	<!-- Include the compiled Ratchet CSS -->
-	<link rel="stylesheet" href="/assets/ratchet.css">
+	<link rel="stylesheet" href="/ratchet.css">
 
 	<!-- Include the compiled Ratchet JS -->
-	<script src="/assets/ratchet.js"></script>
-	<script src="/assets/jquery.min.js"></script>
-  	<script src="/assets/jquery.form.js"></script>
+	<script src="/ratchet.js"></script>
+	<script src="/jquery.min.js"></script>
+  	<script src="/jquery.form.js"></script>
 
 	<!-- Intro paragraph styles. Delete once you start using this page -->
 	<style type="text/css">
@@ -66,7 +66,7 @@
 
 	<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 	<div class="content">
-		<% include(view); %>
+		{{{body}}}
 	</div>
 	<script>
 	$(function(){

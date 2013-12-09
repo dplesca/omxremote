@@ -1,0 +1,13 @@
+<div class="content-padded">    
+</div>
+
+<ul class="list inset">
+	{{#each files}}
+		<li>
+			<a href="/file/{{ this.hash }}">
+				<strong>{{ this.file }}</strong>
+				<span class="chevron"></span>
+			</a>
+		</li>
+	{{/each}}
+</ul>
