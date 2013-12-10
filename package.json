@@ -5,6 +5,7 @@
 	"dependencies" : { 
 		"omxcontrol" : "0.0.1",
 		"express": "3.4.6",
-		"express3-handlebars": "0.5.0"
+		"express3-handlebars": "0.5.0",
+		"ua-parser": "0.3.3"
 	} 
 }
