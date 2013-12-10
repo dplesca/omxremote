@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 	};
 	var files = traverseFileSystem(path, all_files);
 	files.sort(function (a, b) {
-		return a.file.localeCompare(b.file);
+		return a.file.toLowerCase().localeCompare(b.file.toLowerCase());
 	});
     res.render('home', {"files" : files});
 });
