@@ -62,15 +62,15 @@ app.post('/file/:name/stop', function(req, res) {
     res.send(200);
 });
 
-app.post('/file/:name/forward', function(args) {
+app.post('/file/:name/forward', function(req, res) {
     omx.forward();
     res.send(200);
 });
-app.post('/file/:name/backward', function(args) {
+app.post('/file/:name/backward', function(req, res) {
     omx.backward();
     res.send(200);
 });
-app.post('/file/:name/subs', function(args) {
+app.post('/file/:name/subs', function(req, res) {
     omx.subs();
     res.send(200);
 });
