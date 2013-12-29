@@ -62,7 +62,6 @@ app.post('/file/:name/stop', function(req, res) {
     res.send(200);
 });
 
-/*
 app.post('/file/:name/forward', function(args) {
     omx.forward();
     res.send(200);
@@ -75,7 +74,7 @@ app.post('/file/:name/subs', function(args) {
     omx.subs();
     res.send(200);
 });
-*/
+
 
 app.listen(31415);
 
