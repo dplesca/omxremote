@@ -1,7 +1,8 @@
 var express = require('express'),
     exphbs  = require('express3-handlebars'),
     omx = require('omxcontrol'),
-    path = '/media/Seagate',
+    //path = '/media/Seagate',
+    path = 'd:/seriale/Dexter.S08.HDTV.x264/',
     app = express();
 
 app.use(express.static('assets'));
@@ -31,13 +32,24 @@ app.get('/', function (req, res) {
     files.sort(function (a, b) {
         return a.file.toLowerCase().localeCompare(b.file.toLowerCase());
     });
-    res.render('home', {"files" : files});
+    if (r.os.family === 'iOS'){
+        res.render('home', {"files" : files});    
+    } else if(r.os.family === 'Android'){
+        res.render('home', {
+            "files" : files,
+            layout: 'android'
+        });
+    }
+    
 });
 
 app.get('/file/:name', function(req, res){
-    var params = {};
+    var params = {}, r = require('ua-parser').parse(req.headers['user-agent']);
     params.name = new Buffer(req.params.name, 'base64').toString('ascii');
     params.hash = req.params.name;
+    if(r.os.family === 'Android'){
+        params.layout = 'android';
+    }
     res.render('file', params);
 });
 

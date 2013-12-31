@@ -68,24 +68,6 @@
 	<div class="content">
 		{{{body}}}
 	</div>
-	<script>
-	$(function(){
-		$("body").on("click", "a.play, a.start, a.pause, a.stop, a.move, a.subs", function(event){
-			if ($(this).hasClass('pause')){
-				if ($(this).attr('data-status') == 'pause'){
-					$(this).text('Play');
-					$(this).attr('data-status', 'play');
-				} else if($(this).attr('data-status') == 'play'){
-					$(this).text('Pause');
-					$(this).attr('data-status', 'pause');
-				}
-			}
-			$.post( $(this).attr('data-href') ).done(function ( data ) {
-				console.log('done');
-			});
-			event.preventDefault();
-		});
-	});
-	</script>
+	<script src="/app.js"></script>
   </body>
 </html>
