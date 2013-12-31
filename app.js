@@ -27,18 +27,16 @@ app.get('/', function (req, res) {
         }
         return all_files;
     };
-    var files = traverseFileSystem(path, all_files);
+    var files = traverseFileSystem(path, all_files), params = {};
     files.sort(function (a, b) {
         return a.file.toLowerCase().localeCompare(b.file.toLowerCase());
     });
-    if (r.os.family === 'iOS'){
-        res.render('home', {"files" : files});    
-    } else if(r.os.family === 'Android'){
-        res.render('home', {
-            "files" : files,
-            layout: 'android'
-        });
-    }
+
+    params.files = files;
+    if(r.os.family === 'Android'){
+        params.layout = 'android';
+    }    
+    res.render('home', params);
     
 });
 
