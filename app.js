@@ -1,8 +1,7 @@
 var express = require('express'),
     exphbs  = require('express3-handlebars'),
     omx = require('omxcontrol'),
-    //path = '/media/Seagate',
-    path = 'd:/seriale/Dexter.S08.HDTV.x264/',
+    path = '/media/Seagate'
     app = express();
 
 app.use(express.static('assets'));
