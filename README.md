@@ -22,3 +22,5 @@ omxremote is a little node.js and [ratchet](http://maker.github.io/ratchet/) pow
 
 ![home page](http://farm3.staticflickr.com/2840/9282539121_13da5d3980_z.jpg) 
 ![video page](http://farm4.staticflickr.com/3792/9282538835_c315de781d_z.jpg)
+
+[![Analytics](https://ga-beacon.appspot.com/UA-5915627-11/omxremote/index)](https://github.com/igrigorik/ga-beacon)
