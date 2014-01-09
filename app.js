@@ -14,19 +14,19 @@ app.get('/', function (req, res) {
         fs = require('fs');
         traverseFileSystem = function (currentPath, all_files) {
     
-        var files = fs.readdirSync(currentPath);
-        for (var i in files) {
-            var currentFile = currentPath + '/' + files[i];
-            var stats = fs.statSync(currentFile);
-            if (stats.isFile() &&  files[i].match(/(.+).(mkv|mp4|avi)$/)) {
-                all_files.push({"file" : files[i], "hash": new Buffer(currentFile).toString('base64')});
+            var files = fs.readdirSync(currentPath);
+            for (var i in files) {
+                var currentFile = currentPath + '/' + files[i];
+                var stats = fs.statSync(currentFile);
+                if (stats.isFile() &&  files[i].match(/(.+).(mkv|mp4|avi)$/)) {
+                    all_files.push({"file" : files[i], "hash": new Buffer(currentFile).toString('base64')});
+                }
+                else if (stats.isDirectory()) {
+                    traverseFileSystem(currentFile, all_files);
+                }
             }
-            else if (stats.isDirectory()) {
-                traverseFileSystem(currentFile, all_files);
-            }
-        }
-        return all_files;
-    };
+            return all_files;
+        };
     var files = traverseFileSystem(path, all_files), params = {};
     files.sort(function (a, b) {
         return a.file.toLowerCase().localeCompare(b.file.toLowerCase());
