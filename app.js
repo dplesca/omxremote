@@ -1,7 +1,7 @@
 var express = require('express'),
     exphbs  = require('express3-handlebars'),
     omx = require('omxcontrol'),
-    path = '/media/Seagate'
+    path = '/media/Seagate',
     app = express();
 
 app.use(express.static('assets'));
