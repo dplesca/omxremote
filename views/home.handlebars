@@ -4,7 +4,7 @@
 <ul class="table-view">
   {{#each files}}
   <li class="table-view-cell">
-    <a class="navigate-right" href="/file/{{ this.hash }}">
+    <a class="navigate-right" href="/file/{{ this.hash }}" data-transition="slide-in">
       <strong>{{this.file}}</strong>
     </a>
   </li>
