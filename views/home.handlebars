@@ -1,13 +1,12 @@
 <div class="content-padded">    
 </div>
 
-<ul class="list inset">
-	{{#each files}}
-		<li>
-			<a href="/file/{{ this.hash }}">
-				<strong>{{ this.file }}</strong>
-				<span class="chevron"></span>
-			</a>
-		</li>
-	{{/each}}
+<ul class="table-view">
+  {{#each files}}
+  <li class="table-view-cell">
+    <a class="navigate-right" href="/file/{{ this.hash }}">
+      <strong>{{this.file}}</strong>
+    </a>
+  </li>
+  {{/each}}
 </ul>
