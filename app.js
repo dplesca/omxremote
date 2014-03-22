@@ -34,8 +34,8 @@ app.get('/', function (req, res) {
 
     params.files = files;
     if(r.os.family === 'Android'){
-        params.layout = 'android';
-    }    
+        params.android = true;
+    }
     res.render('home', params);
     
 });
