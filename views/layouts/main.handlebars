@@ -9,7 +9,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <link href="/ratchet2/css/ratchet.min.css" rel="stylesheet">
+    {{#if android}}
+    <link href="/ratchet2/css/ratchet-theme-android.min.css" rel="stylesheet">
+    {{#else}}
     <link href="/ratchet2/css/ratchet-theme-ios.min.css" rel="stylesheet">
+    {{/endif}}
     <style>
     .options-line{
       height:44px;
