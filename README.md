@@ -1,7 +1,7 @@
 omxremote
 =========
 
-omxremote is a little node.js powered app for controling omxplayer from your iOS or Android device. It uses a few node modules like: [express](http://expressjs.com/) for some simple routing, [express3-handlebars](https://github.com/ericf/express3-handlebars) for simple templating, [omxcontrol](https://github.com/rikkertkoppes/omxcontrol) for interfacing with the omxplayer. The front-end is written using [ratchet](http://maker.github.io/ratchet/) (for the iOS part) and Fries (for Android interfaces) using a tad of jQuery for starting, pausing, stopping the videos with ajax.
+omxremote is a little node.js powered app for controling omxplayer from your iOS or Android device. It uses a few node modules like: [express](http://expressjs.com/) for some simple routing, [express3-handlebars](https://github.com/ericf/express3-handlebars) for simple templating, [omxcontrol](https://github.com/rikkertkoppes/omxcontrol) for interfacing with the omxplayer. The front-end is written using the awesome [ratchet 2](http://goratchet.com/) (for both the iOS and Android interfaces), using a tad of jQuery for interacting (starting, pausing, stopping) with the videos.
 
 ####Installation
 
