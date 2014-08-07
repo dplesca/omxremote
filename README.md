@@ -11,20 +11,20 @@ omxremote is a little node.js powered app for controling omxplayer from your iOS
     3. upack node and copy it to the newly created directory
             tar xvzf node-v0.10.22-linux-arm-pi.tar.gz
             sudo cp -r node-v0.10.22-linux-arm-pi/* /opt/node
-    4. add node to path, edit `.profile` file and add the next lines
-            ```bash
-            NODE_JS_HOME="/opt/node"
-            PATH="$PATH:$NODE_JS_HOME/bin"
-            export PATH
-            ```
-    5. after the edit log out and log in again
-- next up clone the repo, install node modules and edit your media path: 
+    4. add node to path, edit `.profile` file and add the next lines  
     ```bash
-    git clone https://github.com/dplesca/omxremote  
-    cd omxremote  
-    npm install  
-    var path = '/home/pi/media_files'  
-    ```
+    NODE_JS_HOME="/opt/node"
+    PATH="$PATH:$NODE_JS_HOME/bin"
+    export PATH
+    ```  
+    5. after the edit log out and log in again
+- next up clone the repo, install node modules:  
+```bash
+git clone https://github.com/dplesca/omxremote
+cd omxremote  
+npm install  
+```
+- edit your media path in app js `var path = '/home/pi/media_files'`  
 - run it: `node app.js`
 - point your iPhone's browser to: `http://pi's ip:31415/` and choose the file you want to play
 - (optionally) add the link from above to your iPhone's home screen, you can find it fast and use it without entering the weird ip:port address over and over; there's even an app icon included
