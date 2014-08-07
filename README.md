@@ -12,14 +12,14 @@ omxremote is a little node.js powered app for controling omxplayer from your iOS
             tar xvzf node-v0.10.22-linux-arm-pi.tar.gz
             sudo cp -r node-v0.10.22-linux-arm-pi/* /opt/node
     4. add node to path, edit `.profile` file and add the next lines
-            ```
+            ```bash
             NODE_JS_HOME="/opt/node"
             PATH="$PATH:$NODE_JS_HOME/bin"
             export PATH
             ```
     5. after the edit log out and log in again
 - next up clone the repo, install node modules and edit your media path: 
-    ```  
+    ```bash
     git clone https://github.com/dplesca/omxremote  
     cd omxremote  
     npm install  
