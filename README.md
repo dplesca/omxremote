@@ -12,27 +12,22 @@ omxremote is a little node.js powered app for controling omxplayer from your iOS
             tar xvzf node-v0.10.22-linux-arm-pi.tar.gz
             sudo cp -r node-v0.10.22-linux-arm-pi/* /opt/node
     4. add node to path, edit `.profile` file and add the next lines
+            ```
             NODE_JS_HOME="/opt/node"
             PATH="$PATH:$NODE_JS_HOME/bin"
             export PATH
+            ```
     5. after the edit log out and log in again
-- clone the repo: `git clone https://github.com/dplesca/omxremote`
-- cd in it: `cd omxremote`
-- install npm modules: `npm install`
-- edit app.js with a path of your choosing: `var path = '/home/pi/media_files';`
+- next up clone the repo, install node modules and edit your media path: 
+    ```
+    git clone https://github.com/dplesca/omxremote  
+    cd omxremote  
+    npm install  
+    var path = '/home/pi/media_files
+    ```
 - run it: `node app.js`
 - point your iPhone's browser to: `http://pi's ip:31415/` and choose the file you want to play
 - (optionally) add the link from above to your iPhone's home screen, you can find it fast and use it without entering the weird ip:port address over and over; there's even an app icon included
 
 At this point you should be able to start, pause and stop videos in omxplayer. If you want to be able to move back/forward in the video and toggle subtitles in mkv files you need to edit one of the installed node modules yourself. Just replace the **node_modules/omxcontrol/index.js** file with [the one from my fork of the project](https://raw.github.com/dplesca/omxcontrol/master/index.js).
 
-####Screenshots
-
-#####iOS - iPhone 5
-![homepage](http://i.imgur.com/L8BFDpZl.jpg)
-![video page](http://i.imgur.com/tNYUzh8l.jpg)
-
-#####Android - Nexus 7
-
-![homepage](http://i.imgur.com/sAwhgFql.png)
-![video page](http://i.imgur.com/e83xSgQl.png)
