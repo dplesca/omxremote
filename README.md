@@ -6,18 +6,20 @@ omxremote is a little node.js powered app for controling omxplayer from your iOS
 ####Installation
 
 - first you need to install node.js (guide inspired from [this simple tutorial](http://blog.rueedlinger.ch/2013/03/raspberry-pi-and-nodejs-basic-setup/)):
-    1. download the nodejs compiled for ARM: `wget http://nodejs.org/dist/v0.10.22/node-v0.10.22-linux-arm-pi.tar.gz`
-    2. make a dir for easy updates `sudo mkdir /opt/node`
-    3. upack node and copy it to the newly created directory
-            tar xvzf node-v0.10.22-linux-arm-pi.tar.gz
-            sudo cp -r node-v0.10.22-linux-arm-pi/* /opt/node
-    4. add node to path, edit `.profile` file and add the next lines  
+    1. download the nodejs compiled for ARM, make a dir for easy updates and upack node and copy it to the newly created directory
+    ```bash
+    wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-arm-pi.tar.gz
+    sudo mkdir /opt/node
+    tar xvzf node-v0.10.22-linux-arm-pi.tar.gz
+    sudo cp -r node-v0.10.22-linux-arm-pi/* /opt/node
+    ```
+    2. add node to path, edit `.profile` file and add the next lines  
     ```bash
     NODE_JS_HOME="/opt/node"
     PATH="$PATH:$NODE_JS_HOME/bin"
     export PATH
     ```  
-    5. after the edit log out and log in again
+    3. after the edit log out and log in again
 - next up clone the repo, install node modules:  
 ```bash
 git clone https://github.com/dplesca/omxremote
