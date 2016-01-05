@@ -35,6 +35,40 @@ app.get('/files', function(req, res){
     res.send(files);
 });
 
+app.post('/file/:name/start', function(req, res) {
+    var filename = new Buffer(req.params.name, 'base64').toString('ascii');
+    omx.start(filename);
+    res.send(200);
+});
+
+app.post('/file/:name/pause', function(req, res) {
+    omx.pause();
+    res.send(200);
+});
+
+app.post('/file/:name/play', function(req, res) {
+    omx.pause();
+    res.send(200);
+});
+
+app.post('/file/:name/stop', function(req, res) {
+    omx.quit();
+    res.send(200);
+});
+
+app.post('/file/:name/forward', function(req, res) {
+    omx.forward();
+    res.send(200);
+});
+app.post('/file/:name/backward', function(req, res) {
+    omx.backward();
+    res.send(200);
+});
+app.post('/file/:name/subs', function(req, res) {
+    omx.subs();
+    res.send(200);
+});
+
 
 app.listen(31415);
 
