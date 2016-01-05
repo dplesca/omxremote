@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Learning react.js</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+	<div id="app"></div>	
+</div>
+
+<script src="react.min.js"></script>
+<script src="react.dom.min.js"></script>
+<script src="all.js"></script>
+
+<script>
+	var demo = React.createElement(Videos);
+	React.render(demo, document.getElementById('app'));
+</script>
+
+</body>
+</html>
