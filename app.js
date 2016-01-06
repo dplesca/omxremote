@@ -1,6 +1,6 @@
 var express = require('express'),
     omx = require('omxcontrol'),
-    mediaPath = '.',
+    mediaPath = '/media/Seagate/video',
     fs = require('fs'),
     path = require('path');
     app = express();
