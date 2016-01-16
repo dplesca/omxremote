@@ -1,9 +1,14 @@
-var express = require('express'),
+var program = require('commander'),
+    express = require('express'),
     omx = require('simpleomxcontrol'),
-    mediaPath = '/media/Seagate/video',
     fs = require('fs'),
     path = require('path');
     app = express();
+
+program
+  .version('3.1.0')
+  .option('-p, --path <path>', 'Path for media files', ".");
+program.parse(process.argv);
 
 app.use(express.static('assets'));
 
@@ -28,7 +33,7 @@ app.get('/', function (req, res) {
 
 app.get('/files', function(req, res){
     var all_files = [];
-    var files = traverseFileSystem(mediaPath, all_files), params = {};
+    var files = traverseFileSystem(program.path, all_files), params = {};
     files.sort(function (a, b) {
         return a.file.toLowerCase().localeCompare(b.file.toLowerCase());
     });
