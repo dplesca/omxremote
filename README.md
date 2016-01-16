@@ -8,10 +8,9 @@ omxremote is a little node.js powered app for controling omxplayer from your iOS
 - first you need to install node.js (guide inspired from [this simple tutorial](http://blog.rueedlinger.ch/2013/03/raspberry-pi-and-nodejs-basic-setup/)):
     1. download the nodejs compiled for ARM, make a dir for easy updates and upack node and copy it to the newly created directory
     ```bash
-    wget http://nodejs.org/dist/v0.10.26/node-v0.10.26-linux-arm-pi.tar.gz
+    wget https://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-armv6l.tar.xz
     sudo mkdir /opt/node
-    tar xvzf node-v0.10.22-linux-arm-pi.tar.gz
-    sudo cp -r node-v0.10.22-linux-arm-pi/* /opt/node
+    sudo tar -C /opt/node -xJf node-v4.2.4-linux-armv6l.tar.xz --strip 1
     ```
     2. add node to path, edit `.profile` file and add the next lines  
     ```bash
@@ -21,15 +20,12 @@ omxremote is a little node.js powered app for controling omxplayer from your iOS
     ```  
     3. after the edit log out and log in again
 - next up clone the repo, install node modules:  
-```bash
-git clone https://github.com/dplesca/omxremote
-cd omxremote  
-npm install  
-```
+    ```bash
+    git clone https://github.com/dplesca/omxremote
+    cd omxremote  
+    npm install  
+    ```
 - edit your media path in app js `var path = '/home/pi/media_files'`  
 - run it: `node app.js`
 - point your iPhone's browser to: `http://pi's ip:31415/` and choose the file you want to play
 - (optionally) add the link from above to your iPhone's home screen, you can find it fast and use it without entering the weird ip:port address over and over; there's even an app icon included
-
-At this point you should be able to start, pause and stop videos in omxplayer. If you want to be able to move back/forward in the video and toggle subtitles in mkv files you need to edit one of the installed node modules yourself. Just replace the **node_modules/omxcontrol/index.js** file with [the one from my fork of the project](https://raw.github.com/dplesca/omxcontrol/master/index.js).
-
