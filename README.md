@@ -20,11 +20,11 @@ omxremote is a little node.js powered app for controling omxplayer from your iOS
     ```  
     3. after the edit log out and log in again
 - next up clone the repo, install node modules:  
-    ```bash
-    git clone https://github.com/dplesca/omxremote
-    cd omxremote  
-    npm install  
-    ```
+```bash
+git clone https://github.com/dplesca/omxremote
+cd omxremote
+npm install
+```
 - edit your media path in app js `var path = '/home/pi/media_files'`  
 - run it: `node app.js`
 - point your iPhone's browser to: `http://pi's ip:31415/` and choose the file you want to play
