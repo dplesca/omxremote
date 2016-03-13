@@ -42,6 +42,7 @@ app.get('/files', function(req, res){
 
 app.post('/file/:name/start', function(req, res) {
     var filename = new Buffer(req.params.name, 'base64').toString('ascii');
+    omx.quit();
     omx.start(filename);
     res.sendStatus(200);
 });
