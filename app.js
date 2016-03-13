@@ -17,7 +17,7 @@ traverseFileSystem = function (currentPath, all_files) {
     for (var i in files) {
         var currentFile = currentPath + '/' + files[i];
         var stats = fs.statSync(currentFile);
-        if (stats.isFile() &&  files[i].match(/(.+).(mkv|mp4|avi)$/)) {
+        if (stats.isFile() &&  files[i].match(/(.+).(mkv|mp4|avi|mp3)$/)) {
             all_files.push({"file" : files[i], "hash": new Buffer(currentFile).toString('base64')});
         }
         else if (stats.isDirectory()) {
@@ -42,6 +42,7 @@ app.get('/files', function(req, res){
 
 app.post('/file/:name/start', function(req, res) {
     var filename = new Buffer(req.params.name, 'base64').toString('ascii');
+    omx.quit();
     omx.start(filename);
     res.sendStatus(200);
 });
