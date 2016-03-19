@@ -17,7 +17,7 @@ traverseFileSystem = function (currentPath, all_files) {
     for (var i in files) {
         var currentFile = currentPath + '/' + files[i];
         var stats = fs.statSync(currentFile);
-        if (stats.isFile() &&  files[i].match(/(.+).(mkv|mp4|avi|mp3)$/)) {
+        if (stats.isFile() &&  files[i].match(/(.+).(mkv|mp4|m4v|avi|mp3)$/)) {
             all_files.push({"file" : files[i], "hash": new Buffer(currentFile).toString('base64')});
         }
         else if (stats.isDirectory()) {
