@@ -1,9 +1,11 @@
+I have another project that does exactly the same thing and has 0 dependencies, you just download it and run it. It's written in go and you can [find it here](https://github.com/dplesca/go-omxremote/).
+
 omxremote
 =========
 
 omxremote is a little node.js powered app for controling omxplayer from your iOS or Android device (or even your normal browser). It uses a few node modules like: [express](http://expressjs.com/) for some simple routing, [simpleomxcontrol](https://github.com/dplesca/simpleomxcontrol) for interfacing with the omxplayer. The front-end is written using the awesome [react library](http://facebook.github.io/react/).
 
-####Installation
+#### Installation
 
 - install nodejs
 - clone repo and run `npm install`
